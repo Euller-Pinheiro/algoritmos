@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    name: Lint, tipos e testes (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Instala ferramentas de desenvolvimento
+        run: python -m pip install pytest ruff mypy
+      - name: Lint (ruff)
+        run: ruff check . && ruff format --check .
+      - name: Tipos (mypy --strict)
+        run: mypy .
+      - name: Testes (pytest)
+        run: pytest
