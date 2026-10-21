@@ -12,7 +12,7 @@ dependencies = []
 dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.11"]
 
 [tool.pytest.ini_options]
-addopts = "-ra --strict-markers"
+addopts = "-ra --strict-markers --doctest-modules"
 testpaths = ["."]
 python_files = ["test_*.py"]
 
