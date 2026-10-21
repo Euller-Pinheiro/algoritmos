@@ -15,7 +15,7 @@ Lógica de programação se aprende fazendo. Este repositório é ao mesmo tempo
 
 O projeto está sendo construído em entregas pequenas, cada uma com testes e CI. Acompanhe pelos commits e pull requests.
 
-- [ ] Pilha, fila, deque e lista ligada
+- [x] [Pilha, fila, deque e lista ligada](estruturas_lineares/)
 - [ ] Árvore binária de busca e heap
 - [ ] Tabela hash com tratamento de colisão
 - [ ] Ordenações (bubble, insertion, merge, quick, heap, counting) com comparação de desempenho
@@ -24,9 +24,27 @@ O projeto está sendo construído em entregas pequenas, cada uma com testes e CI
 - [ ] Programação dinâmica: mochila, LCS e troco
 - [ ] Backtracking: N-rainhas, sudoku e torre de Hanói
 
+## Como rodar
+
+Requer Python 3.12 ou mais novo. Não há dependências de execução: tudo é feito
+do zero, só com a biblioteca padrão.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate          # no Windows: .venv\Scripts\activate
+pip install pytest ruff mypy
+
+pytest                             # testes (inclui os exemplos das docstrings)
+ruff check . && ruff format --check .
+mypy .                             # tipagem estrita
+```
+
+Cada tópico fica em uma pasta própria, com o código, os testes e um README
+explicando a ideia, a complexidade e quando usar.
+
 ## Tecnologias
 
-Python 3.12 · pytest · ruff · GitHub Actions
+Python 3.12 · pytest · ruff · mypy · GitHub Actions
 
 ## Autor
 
