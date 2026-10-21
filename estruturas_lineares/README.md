@@ -113,16 +113,16 @@ uso de cache da CPU — mas entender ponteiros é indispensável.
 from estruturas_lineares import Deque, Fila, ListaLigada, Pilha
 
 pilha = Pilha([1, 2, 3])
-pilha.desempilhar()          # 3
+pilha.desempilhar()  # 3
 
 fila = Fila(["ana", "bia"])
-fila.desenfileirar()         # "ana"
+fila.desenfileirar()  # "ana"
 
 deque = Deque([2, 3])
 deque.adicionar_esquerda(1)  # [1, 2, 3]
 
 lista = ListaLigada("abc")
-lista.inverter()             # c -> b -> a
+lista.inverter()  # c -> b -> a
 ```
 
 Todas levantam `EstruturaVaziaError` (uma subclasse de `IndexError`) ao ler ou
